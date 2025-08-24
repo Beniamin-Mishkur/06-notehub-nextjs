@@ -6,12 +6,11 @@ import { useDebounce } from "use-debounce";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
 import NoteList from "@/components/NoteList/NoteList";
-import Loader from "@/components/Loader/Loader";
 import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import { fetchNotes } from "@/lib/api";
 import type { FetchNotesResponse } from "@/types/api";
-import css from "./page.module.css";
+import css from "./NotesPage.module.css";
 import { Toaster } from "react-hot-toast";
 
 interface NotesClientProps {
