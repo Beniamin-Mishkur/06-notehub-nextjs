@@ -1,3 +1,9 @@
+import styles from "./notes/Loading.module.css";
+
 export default function Loading() {
-  return <p>Loading, please wait...</p>;
+  return (
+    <div className={styles.loading} role="status" aria-live="polite">
+      Loading, please wait...
+    </div>
+  );
 }

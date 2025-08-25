@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { useDebounce } from "use-debounce";
+import Modal from "@/components/Modal/Modal";
+import NoteList from "@/components/NoteList/NoteList";
+import NoteForm from "@/components/NoteForm/NoteForm";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
-import NoteList from "@/components/NoteList/NoteList";
-import Modal from "@/components/Modal/Modal";
-import NoteForm from "@/components/NoteForm/NoteForm";
 import { fetchNotes } from "@/lib/api";
 import type { FetchNotesResponse } from "@/types/api";
 import css from "./NotesPage.module.css";
@@ -70,7 +70,12 @@ export default function NotesClient({ initialNotesData }: NotesClientProps) {
             Create note +
           </button>
         </header>
-        {isLoading && !data && <Loader />}
+       {isLoading && !data && (
+  <div className={css.loading} role="status" aria-live="polite">
+    Loading, please wait...
+  </div>
+)}
+
         {isError && (
           <div>
             Error fetching notes: {error.message}

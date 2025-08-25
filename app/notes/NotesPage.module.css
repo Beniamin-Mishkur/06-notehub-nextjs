@@ -30,3 +30,14 @@
 .button:hover {
   background-color: #0b5ed7;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+}
